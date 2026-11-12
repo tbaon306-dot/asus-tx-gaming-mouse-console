@@ -1,0 +1,33 @@
+name: build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 编译主程序
+        shell: pwsh
+        run: ./tools/build.ps1
+
+      - name: 冒烟检查（不启动 UI，只确认能加载）
+        shell: pwsh
+        run: |
+          $exe = 'build/ASUSMouseConsole.exe'
+          if (-not (Test-Path $exe)) { throw '没有产出 exe' }
+          $size = [math]::Round((Get-Item $exe).Length / 1KB, 1)
+          Write-Host "exe: $size KB"
+          # 检查是否误把 SDK 或密钥提交进来
+          $bad = git ls-files | Select-String -Pattern 'ArmouryMsSDK\.dll|MouseSDK/|\.pfx$|\.pem$'
+          if ($bad) { throw "仓库里出现了不该提交的文件: $bad" }
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ASUSMouseConsole
+          path: build/ASUSMouseConsole.exe
