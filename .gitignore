@@ -1,0 +1,24 @@
+# 构建产物
+bin/
+build/
+dist/
+obj/
+*.exe
+*.pdb
+*.zip
+
+# 华硕 SDK —— 不随仓库分发
+MouseSDK/
+pack/
+payload.bin
+
+# 运行时产生的文件
+*.log
+state/
+screenshots/local/
+
+# 编辑器
+.vs/
+.vscode/
+*.user
+*.suo
