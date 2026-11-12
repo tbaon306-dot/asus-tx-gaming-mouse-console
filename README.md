@@ -1,5 +1,7 @@
 # ASUS TX GAMING MOUSE 控制台
 
+[![build](https://github.com/tbaon306-dot/asus-tx-gaming-mouse-console/actions/workflows/build.yml/badge.svg)](https://github.com/tbaon306-dot/asus-tx-gaming-mouse-console/actions/workflows/build.yml)
+
 一个 85 KB 的原生 Windows 小工具：**不用启动奥创中心（Armoury Crate）**，直接控制华硕 **TX GAMING MOUSE（P310，`VID_0B05&PID_1A8D`）** 的 DPI、按键映射和板载配置档。
 
 > 本项目与华硕（ASUS）无关，不含华硕的任何二进制文件或美术资源。

@@ -1,5 +1,7 @@
 # ASUS TX GAMING MOUSE Console
 
+[![build](https://github.com/tbaon306-dot/asus-tx-gaming-mouse-console/actions/workflows/build.yml/badge.svg)](https://github.com/tbaon306-dot/asus-tx-gaming-mouse-console/actions/workflows/build.yml)
+
 A native 85 KB Windows utility that controls the ASUS **TX GAMING MOUSE (P310, `VID_0B05&PID_1A8D`)** — DPI, button remapping and onboard profiles — **without running Armoury Crate**.
 
 > Not affiliated with ASUS. This repository contains no ASUS binaries or artwork.
